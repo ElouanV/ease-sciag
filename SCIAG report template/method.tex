@@ -1,0 +1,60 @@
+\section{Method}
+You can add references to your annexes like this Fig. \ref{fig:sciag_logo}.
+Note that with Python, you can easily export plots in a vectorial format so that it scales well on your pdf. You can also easily convert a data frame to a \textit{.tex} file to avoid copy/paste error and avoid wasting time.
+Some libraries like \textit{minted} or \textit{listings} allows you to add code in your project and format it well. Its avoid to include a screen shot of your code in your report which is pretty ugly and annoying when you edit one line in your code...
+If you need to include an algorithm in your report, you can use \textit{algorithm} or \textit{algpseudocode}.
+Here are some examples of libraries we just talk: algorithm \ref{alg:median_approx} presents an algorithm, Fig. \ref{code:fibo} show a Python code.
+
+%% Median graph approximation algorithms
+\begin{algorithm}[htb]\label{alg:random_alg}
+\caption{Approximate median graph}
+\label{alg:median_approx}
+\begin{algorithmic}[1]
+\Require $G$ a set of graphs, $t$ a threshold
+\Ensure Median graph
+\State S $\leftarrow  \{\}$ 
+\State g $\leftarrow$ drawn from $G$
+\State S $\leftarrow S \cup \{g\}$\;
+\Repeat %While{$dist(g, S) > t$}
+\State     draw $g \sim dist(g,S)$ \;
+\State     S $ \leftarrow$ S $\cup$ $\{g\}$;
+\Until $(dist(g, S) < t)$
+\State \Return median(S)\;
+\end{algorithmic}
+\end{algorithm}
+
+\begin{figure}[!htb]
+    \centering
+    \lstinputlisting[language=Python]{code/fibo.py}
+    \caption{Recursive implementation of fibo in Python}
+    \label{code:fibo}
+\end{figure}
+Here is a SPARQL request with \textit{minted}
+\begin{minted}{sparql}
+select (count(*) as ?count) where {
+  ?x ?p ?y
+}
+\end{minted}
+
+
+With the \$ symbol, you can write mathematical sentences: $\frac{n!}{k!(n-k)!} = \binom{n}{k}$.But you can also write equation like this: 
+\begin{equation}
+    \mathcal{}
+\end{equation}
+There is a lot of ways to add maths to a report in LateX, RTFM\footnote{You can add footnote like this, and here is a link to the overleaf documentation for \href{https://www.overleaf.com/learn/latex/Mathematical_expressions}{mathematical expression}}. This also shows you how to add an hyperlink to your report.\\
+You can also add a table as in Tab. \ref{tab:tinytab}.
+
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{| c | c |}
+    \hline
+         ColName & ColName  \\
+         \hline
+         Raw1 & Raw1 \\
+         \hline
+    \end{tabular}
+    \caption{Add a caption }
+    \label{tab:tinytab}
+\end{table}
+
+Note than you can add a label to almost everything to add a reference to, like this reference to the Section \ref{sec:intro}.
